@@ -1,0 +1,27 @@
+# Define a function to handle user input and generate responses
+def simple_chatbot(user_input):
+    # Convert user input to lowercase for case-insensitive matching
+    user_input = user_input.lower()
+    
+    # Define predefined rules and responses
+    if "hello" in user_input:
+        response = "Hello! How can I assist you today?"
+    elif "how are you" in user_input:
+        response = "I'm just a computer program, but I'm here to help!"
+    elif "what is your name" in user_input:
+        response = "I'm a simple chatbot."
+    elif "bye" in user_input:
+        response = "Goodbye! Have a great day."
+    else:
+        response = "I'm not sure how to respond to that."
+
+    return response
+
+# Main loop to keep the chatbot running
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "exit":
+        print("Chatbot: Goodbye!")
+        break
+    response = simple_chatbot(user_input)
+    print("Chatbot:", response)
